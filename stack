@@ -1,0 +1,53 @@
+#  why stack is not recommended in list
+#  since list is dynamic memory allocation
+#  fill all the value is filled in the memory
+#  once again appending the value will create another memory
+# thus it will copy from the old memory to the new memory hence
+# if there are 1 million value it will copy 1 million value again
+# hence use dequeue from collection
+
+# Applications of stack
+# 1. used in "undo" mechanism in text editor.
+# 2. Language processing:
+#  space for parameters and local variables is created internally using a stack.
+#  compiler's syntax check for matching braces is implemented by using stack.
+#  support for recursion.
+#  Expression evaluation like postfix or prefix in compilers.
+# 3. Backtracking (game playing, finding paths, exhaustive searching.
+# 4. Memory management, run-time environment for nested language features. etc
+# Applications of Queue
+#
+# 1.When a resource is shared among multiple consumers. Examples include CPU scheduling, Disk Scheduling. When data is
+# 2.transferred asynchronously (data not necessarily received at same rate as sent) between two processes. Examples
+# include IO Buffers, pipes, file IO, etc. used in graph traversal algorithms used in recognizing palindrome used in
+# 3.simulations,etc
+
+class Stack:
+    def __init__(self):
+        self.arr = []
+
+    def push(self,value):
+        self.arr.append(value)
+
+    def pop(self,):
+        if len(self.arr) < 1:
+            return None
+        return self.arr.pop()
+
+    def size(self):
+        return len(self.arr)
+
+    def print(self):
+        print(self.arr)
+
+
+stack = Stack()
+stack.push(10)
+stack.push(20)
+stack.push(30)
+stack.pop()
+stack.pop()
+stack.pop()
+stack.pop()
+stack.print()
+
